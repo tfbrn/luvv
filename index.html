@@ -1,105 +1,98 @@
-<html><meta charset='UTF-8'/>
-<meta content='width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=5' name='viewport'/>
-<meta content='IE=edge' http-equiv='X-UA-Compatible'/>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
-
+<!DOCTYPE html>
+<html lang="id">
 <head>
-<title>Maaf ya...</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ucapan Maaf</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+      background: #000;
+      color: white;
+      text-align: center;
+    }
+
+    #bgbelakang img {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    .box {
+      margin-top: 100px;
+      font-size: 24px;
+      animation: fadeIn 3s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .gif {
+      width: 200px;
+      margin: 20px auto;
+      display: block;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+
+    .sembunyi {
+      display: none;
+    }
+  </style>
 </head>
+<body onload="mulai()">
 
-<style>
-:root {
---warna-bg: rgba(0, 0, 0, .75); 
---warna-teks: white;
---warna-bingkai: rgba(255, 255, 255, .7);
---bingkai: 12px;
---gaya-font: 'Ubuntu', sans-serif;
-}
-body{background-color:#101010;font-family:var(--gaya-font);padding:25px;-webkit-user-select:none;-ms-user-select:none;user-select:none;} 
-a{text-decoration:none;}
-body::before{content:"\00A9  Script HTML Minta Maaf";color:white;opacity:.4;font-size:11px;position:fixed;bottom:25px;left:25px;text-shadow:0px 2px 2px rgba(0,0,0,.8);z-index:2}
-#bgbelakang{display:block;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.4);-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px);transition:all 1s ease;}
-#bgbelakang img{opacity:.5;width:100%;height:100%;object-fit:cover}
+  <!-- Background -->
+  <div id="bgbelakang">
+    <img src="https://i.ibb.co/nDMNsVT/sunset.jpg" alt="Background">
+  </div>
 
-@keyframes kont{0%{left:-1px;top:-3px;}50%{left:1px;top:3px;}100%{left:-1px;top:-3px;}}
-blockquote{opacity:0;visibility:hidden;transition:all 1s ease;position:relative;margin-top:120px;margin-left:0;margin-right:0;}
-blockquote{width:400px;min-height:30px;background:var(--warna-bg);color:var(--warna-teks);text-shadow:0px 2px 2px rgba(0,0,0,.8);text-align:center;line-height:1.3em;padding:25px;border:1px solid var(--warna-bingkai);border-radius:var(--bingkai);}
-p{opacity:0;color:var(--warna-teks);font-size:16px;font-weight:700;line-height:1.4em;margin:0 10px;text-shadow:0px 2px 2px rgba(0,0,0,.8);transform:scale(.1);transition:all .3s ease;}
-#kalimat,#kalimatc{opacity:1;transform:scale(1);}
-#kalimatc{font-size:15px;font-weight:400}
-#contTom{opacity:0;margin:0;display:flex;align-items:left;list-style:none;transition:all 1s ease;}
-.button{cursor:pointer;display:inline-flex;align-items:center;margin:12px 0;transition:all .3s ease;padding:10px;outline:0;border:1px solid var(--warna-bingkai);border-radius:var(--bingkai);line-height:15px;background:var(--warna-bg);color:var(--warna-teks);font-size:13px;font-weight:700;}
-.button:hover{transform:scale(.9);opacity:.95;}
-#Content{animation-name:none;animation-duration:3s;animation-iteration-count:infinite;position:relative;opacity:0;margin-top:50px;width:100%;height:180px;transition:all 1.3s ease;}
-#Content > *{display:flex;align-items:center;text-align:center;justify-content:center;margin-top:15px;}
-#Content img{display:none;background:rgba(255,255,255,.9);border-radius:50%;padding:10px;width:110px;height:110px;margin:20px 0;}
-.swal2-title{font-size:18px;text-align:center;}
-</style>
+  <!-- Audio -->
+  <audio src="https://tfbrn.github.io/songs/ultah.mp3" id="linkmp3" class="sembunyi"></audio>
 
-<body>
-   <div id="bgbelakang">
-     <!-- Wallpaper --> <img src="https://i.ibb.co/nDMNsVT/sunset.jpg"/>
-   </div>
+  <!-- Konten -->
+  <div class="box" id="teks">
+    <h2 id="pesan">Hai, aku mau bilang...</h2>
+    <img src="https://i.ibb.co/9hHqXWf/sorry1.gif" class="gif" id="gif1" alt="Gif">
+  </div>
 
-   <div id='Content'>
-   <!-- Foto Atas -->
-   <div><img id="fotosatu" src=""/><img id="fotodua" src=""/><img id="fototiga" src=""/><img id="fotoempat" src=""/></div>
-   <div><blockquote id='bq'>
-   <p id="kalimat">...</p>
-   <p id="kalimatc"></p>
-   </blockquote></div>
-   <div id="contTom"><a id="By" class='button' onClick="sjawab()">Klik untuk Jawab</a></div>
-   </div>
+  <script>
+    let audio;
 
-<script>
-  function showDiv(){setTimeout(setel,50);pergantian();setTimeout(kpemb,100);document.getElementById('Content').style="opacity:1;margin-top:4vh;animation:kont 5s infinite;";}
-  function kpemb(){bq.style="opacity:1;visibility:visible;margin-top:5px";}
-  function loadfoto(){fotosatu.style="display:inline-flex";fotosatu.src=gambar1;fotodua.src=gambar2;fototiga.src=gambar3;fotoempat.src=gambar4;}
-  function tombol(){contTom.style="opacity:1;transform:scale(1);";ftom=1;}
-  const swals=Swal.mixin({allowOutsideClick:false});
-  const swalst=Swal.mixin({allowOutsideClick:false,showConfirmButton:false,timer:1200,timerProgressBar:true,didOpen:()=>{Swal.showLoading();},willClose:()=>{}});
-  var today=new Date();
-  function sjawab(){if(ftom==1){jawab();} if(ftom==2){menuju();}}
-  function otomatis(){kalimatc.style="transform:scale(.3);margin-top:30px;";setTimeout(()=>{kalimatc.style="transform:scale(1);margin-top:30px;";},200);}
-  function finalakhir(){ftom=2;otomatis();By.innerHTML="Kirim Pesan";kalimatc.innerHTML="Jawabanmu: "+pesanwhatsapp;}
-  function setel(){audio.play();}
-  var aa=0;function ngetik(){if(aa<katangetik.length){kalimat.innerHTML+=katangetik.charAt(aa);aa++;setTimeout(ngetik,60);}}
-  var ai=0;function ngetik2(){if(ai<katangetik2.length){kalimat.innerHTML+=katangetik2.charAt(ai);ai++;setTimeout(ngetik2,60);}}
-  var au=0;function ngetik3(){if(au<katangetik3.length){kalimat.innerHTML+=katangetik3.charAt(au);au++;setTimeout(ngetik3,50);}if(au==katangetik3.length){setTimeout(()=>{fototiga.style="display:none";fotoempat.style="display:inline-flex";setTimeout(tombol,1000);kalimatc.innerHTML=emot;},600);}}
-  function pergantian(){setTimeout(gantikata,1700);setTimeout(gantikata,4200);setTimeout(gantikata,6400);}
-  fkata=1;function gantikata(){if(fkata==1){kalimat.innerHTML="";setTimeout(ngetik,50);}if(fkata==2){kalimat.innerHTML="";setTimeout(ngetik2,50);fotosatu.style="display:none";fotodua.style="display:inline-flex";}if(fkata==3){kalimat.innerHTML="";setTimeout(ngetik3,50);fotodua.style="display:none";fototiga.style="display:inline-flex";}fkata++;}
-</script>
+    async function mulai(){
+      audio = document.getElementById("linkmp3");
+      audio.play();
 
-<script type="text/javascript">
-async function menuju(){await swals.fire('Mau kirim pesan ke WhatsApp aku?');window.location="https://api.whatsapp.com/send?phone=&text="+pesanwhatsapp;}
-async function jawab(){
-  var { value: jawaban }=await swals.fire({title:'Tulis jawabanmu ya 🤍',input:'text',allowOutsideClick:false,showCancelButton:false});
-  if(jawaban && jawaban.length<20){
-    window.jawaban=jawaban;pesanwhatsapp=jawaban;finalakhir();
-  }else{
-    await swals.fire('Ups!','Jawaban tidak boleh kosong atau lebih dari 20 karakter.');jawab();
-  }
-}
+      // Teks berganti setelah beberapa detik
+      setTimeout(() => {
+        document.getElementById("pesan").innerText = "Maaf ya... aku bikin kamu badmood 😔";
+        document.getElementById("gif1").src = "https://i.ibb.co/Ryy0cFx/sorry2.gif";
+      }, 5000);
 
-async function pertama(){
- audio=new Audio('https://audio.jukehost.co.uk/IkPAuUie3UV0XRyF1Y6iJRxski2Q7qt3');
- gambar1="https://i.ibb.co/9hHqXWf/sorry1.gif";
- gambar2="https://i.ibb.co/Ryy0cFx/sorry2.gif";
- gambar3="https://i.ibb.co/sQP8L4w/sorry3.gif";
- gambar4="https://i.ibb.co/ZmMQM0W/sorry4.gif";
+      setTimeout(() => {
+        document.getElementById("pesan").innerText = "Sungguh, aku nggak bermaksud bikin kamu sedih 💔";
+        document.getElementById("gif1").src = "https://i.ibb.co/sQP8L4w/sorry3.gif";
+      }, 10000);
 
- katangetik="Maaf ya...";
- katangetik2="Aku bikin kamu badmood...";
- katangetik3="Sungguh, aku nggak bermaksud bikin kamu sedih 💔";
+      setTimeout(() => {
+        document.getElementById("pesan").innerText = "Semoga kamu mau maafin aku 🤲";
+        document.getElementById("gif1").src = "https://i.ibb.co/ZmMQM0W/sorry4.gif";
+      }, 15000);
+    }
+  </script>
 
- emot="Semoga kamu mau maafin aku 🤲";
-
- loadfoto();await swalst.fire('Tunggu');await swals.fire('Halo...','Aku ada yang mau bilang...');setTimeout(showDiv,300);
-}
-pertama();
-</script>
 </body>
 </html>
