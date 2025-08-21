@@ -66,11 +66,13 @@ p{opacity:0;color:var(--warna-teks);font-size:16px;font-weight:700;line-height:1
   function otomatis(){kalimatc.style="transform:scale(.3);margin-top:30px;";setTimeout(()=>{kalimatc.style="transform:scale(1);margin-top:30px;";},200);}
   function finalakhir(){ftom=2;otomatis();By.innerHTML="Kirim Pesan";kalimatc.innerHTML="Jawabanmu: "+pesanwhatsapp;}
   function setel(){audio.play();}
-  var aa=0;function ngetik(){if(aa<katangetik.length){kalimat.innerHTML+=katangetik.charAt(aa);aa++;setTimeout(ngetik,60);}}
-  var ai=0;function ngetik2(){if(ai<katangetik2.length){kalimat.innerHTML+=katangetik2.charAt(ai);ai++;setTimeout(ngetik2,60);}}
+  
+  var aa=0;function ngetik(){if(aa<katangetik.length){kalimat.innerHTML+=katangetik.charAt(aa);aa++;setTimeout(ngetik,60);}else{setTimeout(()=>{gantikata();},500);}}
+  var ai=0;function ngetik2(){if(ai<katangetik2.length){kalimat.innerHTML+=katangetik2.charAt(ai);ai++;setTimeout(ngetik2,60);}else{setTimeout(()=>{gantikata();},500);}}
   var au=0;function ngetik3(){if(au<katangetik3.length){kalimat.innerHTML+=katangetik3.charAt(au);au++;setTimeout(ngetik3,50);}if(au==katangetik3.length){setTimeout(()=>{fototiga.style="display:none";fotoempat.style="display:inline-flex";setTimeout(tombol,1000);kalimatc.innerHTML=emot;},600);}}
-  function pergantian(){setTimeout(gantikata,1700);setTimeout(gantikata,4200);setTimeout(gantikata,6400);}
-  fkata=1;function gantikata(){if(fkata==1){kalimat.innerHTML="";setTimeout(ngetik,50);}if(fkata==2){kalimat.innerHTML="";setTimeout(ngetik2,50);fotosatu.style="display:none";fotodua.style="display:inline-flex";}if(fkata==3){kalimat.innerHTML="";setTimeout(ngetik3,50);fotodua.style="display:none";fototiga.style="display:inline-flex";}fkata++;}
+  
+  function pergantian(){setTimeout(()=>{if(fkata==1)gantikata();},100);}
+  fkata=1;function gantikata(){if(fkata==1){aa=0;kalimat.innerHTML="";setTimeout(ngetik,50);}if(fkata==2){ai=0;kalimat.innerHTML="";setTimeout(ngetik2,50);fotosatu.style="display:none";fotodua.style="display:inline-flex";}if(fkata==3){au=0;kalimat.innerHTML="";setTimeout(ngetik3,50);fotodua.style="display:none";fototiga.style="display:inline-flex";}fkata++;}
 </script>
 
 <script type="text/javascript">
