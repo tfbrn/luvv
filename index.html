@@ -1,91 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+<meta charset='UTF-8'/><meta content='width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=5' name='viewport'/><meta content='IE=edge' http-equiv='X-UA-Compatible'/>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Sono:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+  <script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script><link href="https://htmlku.com/haipacar/style.css" rel="stylesheet" type="text/css" /><script src="https://kit.fontawesome.com/4f3ce16e3e.js" crossorigin="anonymous"></script>
+  
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>💌 Untuk Kamu</title>
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-<link rel="stylesheet" href="https://htmlku.com/semogakamu/style.css">
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
-
-<style>
-body{margin:0}
-.mainSt img{
-width:80px;height:80px;
-background:rgba(255,255,255,0.2);
-border-radius:50%;
-padding:10px;
-}
-.overlay{
-position:fixed;
-top:0;left:0;right:0;bottom:0;
-display:flex;
-justify-content:center;
-align-items:center;
-background:rgba(0,0,0,0.6);
-z-index:999;
-}
-.cover{
-text-align:center;
-color:white;
-}
-</style>
+<title>Htmlku.com/haipacar - Pesan buat Kamuuuu! 💐</title>
+<!-- 
+  Made with love by Rayys!
+  
+     Blog: feeldream.id
+     Instagram: @rayyarrr
+     TikTok: @feelthisray
+     
+  Thanks to all <3
+-->
 </head>
-
 <body>
+	
+   <!-- Ganti Audio di sini -->
+   <audio src="https://feeldreams.github.io/audio/melody2.mp3" id="linkmp3" class="sembunyi"></audio>
+   
+   <div id="bodyblur">
+     <!-- Wallpaper --><img src="https://feeldreams.github.io/pics/awan8.jpg" id="wallpaper"/>
+   </div>
+   
+   <div id='Content'>
 
-<!-- AUDIO OPTIONAL (boleh dihapus kalau tidak ada file) -->
-<!-- <audio src="jangancape.mp3" id="linkmp3"></audio> -->
+     <div id="ftAwal">
+       <!-- Stiker Pembuka -->
+       <img src="https://feeldreams.github.io/pandaputih.gif" id="ftoAwal"/>
+     </div>
 
-<div class="overlay">
-  <div class="cover">
-    <p style="font-weight:bold">Bukaa ini yaaa Sayaangg 💕</p>
-    <div id="loveIn" style="cursor:pointer;font-size:18px">❤️ Sentuh LOVEnya ❤️</div>
-  </div>
-</div>
+     <div id="loveIn">
+       <!-- Tombol LOVE --><label class='lovein'>❤️</label>
+     </div>
+     <p id="ket">Sentuh Tombolnya!</p>
+     
+     <div class="kumpulanstiker">
+         <!-- Stiker untuk Konten -->
+         <img src="https://feeldreams.github.io/bunga.gif" id="fotostiker"/>
+         <img src="https://feeldreams.github.io/pusn.gif" id="fotostiker1"/>
+         <img src="https://feeldreams.github.io/ngumpet.gif" id="fotostiker2"/>
+         <img src="https://feeldreams.github.io/ciumin.gif" id="fotostiker3"/>
+     </div>
+     
+     <div><div id='pergeseran'>
+     	
+        <p><b>
+	        <span>haii pacar aku yang<br>gemesin bangett 😋😍🫶</span>
+        </b></p>
+        
+        <p><b>
+	        <span>asal kamu tau yaaa!!!</span>
+        </b></p>
+        
+        <p><b>
+	        <span>aku bener²<br>mencintaimuu<3333</span>
+        </b></p>
 
-<div class="swiper">
-<div class="mainMsg">
-<div class="mainSt">
-<img id="st1" src="https://htmlku.com/0/panda/ngumpet.gif"/>
-</div>
-<span class="mainTxt"></span>
-</div>
-</div>
+        <p><b>
+	        <span>dan aku juga sangat<br>takut kehilangan kamu:(</span>
+        </b></p>
 
-<script>
-const texts = [
-"Jangan Cape Sama Aku yaa 🥺",
-"Aku memang kadang egois...",
-"Tapi aku tulus sayang kamu 💕",
-"Jangan tinggalin aku yaaa 🫶"
-];
+        <p><b>
+	        <span>tapi maaf ya kalau<br>aku selalu bkin kamu marah,</span>
+        </b></p>
+        
+        <p><b>
+	        <span>dan bahkan<br>kecewa sama aku 🥺</span>
+        </b></p>
+        
+        <p><b>
+	        <span>jadi aku minta maaf ya<br>hehehe i lvyouuu 💞🤍💝❣️</span>
+        </b></p>
+       
+     </div></div>
 
-let index=0;
+     <p id="ketgeser">💌 Klik untuk Geser!</p>
 
-document.getElementById("loveIn").onclick=function(){
-document.querySelector(".overlay").style.display="none";
-tampilkan();
-};
-
-function tampilkan(){
-if(index<texts.length){
-new TypeIt(".mainTxt",{
-strings:texts[index],
-speed:40,
-afterComplete:function(){
-setTimeout(()=>{
-document.querySelector(".mainTxt").innerHTML="";
-index++;
-tampilkan();
-},1500);
-}
-}).go();
-}
-}
-</script>
-
+   </div>
+   
+<script src="https://htmlku.com/haipacar/script.js"></script>
 </body>
 </html>
